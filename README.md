@@ -19,10 +19,10 @@
 ## Gerenciadores de pacote
 * NPM e Yarn
    * são ferramentas que auxiliam um desenvolvedor a fazer o download de pacotes/libs/frameworks e inserir no seu projeto web.
-* Yarn <- Utilizado nessa aplicação
+* Yarn
 
 ## Frameworks
-   * Express <- Utilizado nesa aplicação
+   * Express
    * Egg.js
    * Nest.js
    * Adonis.js
@@ -56,3 +56,27 @@
          ```
       5. Camadas
       6. Código Sob Demanda
+# Métodos de Requisição
+* ```GET```  - Leitura/Busca
+* ```POST``` - Criação
+* ```PUT```  - Atualização de varios dados dentro de um objeto
+* ```DELETE``` - Deleção
+* ```PATCH``` - Atualização parcial
+## HTTP Codes
+ * É driscrito de três digitos, onde o primeiro digito descreve a qual é pertencente.
+ * 1XX: Informativo - a solicitação foi aceita ou o processo continua em andamento;
+ * 2XX: Confirmação;
+   * 200 - Requisição bem sucedida
+   * 201 - Created - Geralmente usado para **POST** após uma inserção.
+* 3XX: Redirecionamento;
+   * 301 - Moved Permanently
+   * 302 - Moved
+* 4XX: Erro do cliente;
+   * 400 - Bad Request
+   * 401 - Unauthorized
+   * 403 - Forbidden
+   * 404 - Not Found
+   * 422 - Unprocessable Entity
+* 5XX: Erro no servidor - o servidor falhou ao concluir a solicitação.
+   * 500 - Internal Server Error
+   * 502 - Bad Gateway
