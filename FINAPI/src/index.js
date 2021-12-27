@@ -124,5 +124,21 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
   return response.json(statement);
 });
 
+// atualização de conta
+app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
+  const { name } = request.body;
+  const { customer } = request;
+
+  customer.name = name;
+
+  return response.status(201).send();
+});
+
+app.get("/account", verifyIfExistsAccountCPF, (request, response) =>{
+  const { customer } = request;
+
+  return response.json(customer);
+})
+
 // localhost:
 app.listen(3333);
