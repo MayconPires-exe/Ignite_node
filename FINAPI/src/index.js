@@ -138,7 +138,26 @@ app.get("/account", verifyIfExistsAccountCPF, (request, response) =>{
   const { customer } = request;
 
   return response.json(customer);
-})
+});
+
+// remoção de conta
+app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+
+  //splice
+  customers.splice(customer, 1);
+
+  return response.status(200).json(customers);
+});
+
+// mostra o saldo da conta
+app.get("/balance", verifyIfExistsAccountCPF, (request, response) => {
+  const { customer } = request;
+
+  const balance = getBalance(customer.statement);
+
+  return response.json(balance);
+});
 
 // localhost:
 app.listen(3333);
